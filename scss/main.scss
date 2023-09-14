@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600&display=swap');
+h1,h2,h3,p,span,a{
+    font-family: 'Montserrat';
+}
+img{
+    pointer-events: none;
+}
+$color-base: #BCE580;
+$color-negro:#333;
+$font-color1:#fff;
+$font-color2:#333;
+body{
+    background-color: $color-negro;
+    user-select: none;
+}
+.inicio{
+    background: linear-gradient(180deg, #BCE580 0%, rgba(207, 231, 173, 0.00) 92.31%);
+}
