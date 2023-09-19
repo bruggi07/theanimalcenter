@@ -5,7 +5,8 @@ h2,
 h3,
 p,
 span,
-a {
+a,
+li {
     font-family: 'Montserrat';
 }
 
@@ -17,11 +18,27 @@ a:visited {
 img {
     pointer-events: none;
 }
+
 body {
     background-color: $color-negro;
     user-select: none;
 }
 
+// bg inicio
 .inicio {
-    background: linear-gradient(180deg, #BCE580 0%, rgba(207, 231, 173, 0.00) 92.31%);
+    background: linear-gradient(180deg, #BCE580 0%, #333 92.31%);
 }
+
+// margin secciones general
+
+.inicio,
+.servicios,
+.nosotros,
+.clientes,
+.contacto {
+    padding-left: 10vh;
+    padding-right: 10vh;
+}
+
+// border radius botones
+$radio1:1.3vw;

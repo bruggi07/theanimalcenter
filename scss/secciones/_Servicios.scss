@@ -1,0 +1,122 @@
+// -------------------------------------------- SERVICIOS-------------------------------------------
+
+.servicios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+
+    .tittle_servicios {
+        h1 {
+            font-size: $fontsize-h1-inicio;
+            color: $font-color1;
+        }
+    }
+
+    .cont_tar_servicios {
+        display: flex;
+        flex-direction: column;
+        $gap_tar: 2.5vw;
+        width: 100%;
+        gap: $gap_tar;
+
+        .cont_tarjeta {
+            display: flex;
+            position: relative;
+            background: $color-base;
+            border-radius: $radio1;
+            height: 340px;
+            height: 17.5vw;
+            overflow: hidden;
+
+            .cont_titulo_serv {
+                display: flex;
+                position: absolute;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 15px;
+                .cont-icon-tit{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0.5vw;
+                }
+                .cont-icon-servicios {
+                    display: flex;
+                    width: 2vw;
+                }
+                .cont-lista-serv{
+                    color: $font-color2;
+                    font-size: $fontsize-lista-servicios;
+                    font-weight: 500;
+                }
+
+                .tittle_tar_servicios {
+                    font-size: $fontsize-tittle-servicios;
+                    color: $font-color2;
+                    font-weight: 600;
+                }
+            }
+
+            .cont_img_servicios {
+                display: flex;
+                position: absolute;
+                img {
+                    object-fit: contain;
+                }
+            }
+        }
+        .tar1,
+        .tar3 {
+            .cont_img_servicios {
+                width: 80%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                bottom: 0;
+            }
+        }
+
+        .tar2,
+        .tar4,
+        .tar7,
+        .tar8 {
+            .cont_img_servicios {
+                height: 100%;
+                right: 0;
+            }
+        }
+
+        .tar5 {
+            .cont_img_servicios {
+                bottom: 0;
+            }
+        }
+        .tar6 {
+            .cont_img_servicios{
+                width: 60%;
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        .cont_tar_fila1 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: $gap_tar;
+        }
+
+        .cont_tar_fila2 {
+            display: grid;
+            grid-template-columns: 1.7fr 1.3fr 1fr;
+            gap: $gap_tar;
+        }
+
+        .cont_tar_fila3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: $gap_tar;
+        }
+    }
+}
