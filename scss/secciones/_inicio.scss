@@ -3,14 +3,13 @@
 .inicio {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 12vh;
+    padding-top: 5.21vw; // 100px
 
     .cont_izq {
         display: flex;
         flex-direction: column;
-        margin-top: 200px;
-        margin-right: 80px;
-        gap: 70px;
+        margin-top: 10.42vw; // 100px
+        gap: 3.65vw; // 70px
 
         .cont_text_inicio {
 
@@ -27,6 +26,7 @@
             p {
                 font-weight: 500;
                 font-size: $fontsize-p-btn-inicio;
+                max-width: 40.36vw; //775px
             }
         }
 
@@ -34,14 +34,15 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             position: relative;
-            gap: 30px;
+            max-width: 40.36vw; //775px
+            gap: 1.56vw; // 30px
 
             span {
                 position: relative;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 10px;
+                gap: 0.52vw; // 10px
                 padding: 6% 0;
                 border-radius: $radio1;
                 font-weight: 600;
@@ -76,7 +77,7 @@
             .info_inicio {
                 display: flex;
                 align-items: center;
-                gap: 10%;
+                gap: 1.04vw; // 20px
 
                 img {
                     width: 21%;

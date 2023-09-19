@@ -4,12 +4,12 @@
     display: flex;
     position: absolute;
     width: 100%;
-    top: 30px;
+    top: 1.5vw; //30px
     justify-content: center;
 
     .nav_menu {
         display: flex;
-        gap: 80px;
+        gap: 4.16vw; //80px
 
         a {
             color: $font-color1;
@@ -25,8 +25,8 @@
     width: 11%;
     position: absolute;
     align-items: center;
-    left: 10vh;
-    top: 50px;
+    left: 5.208vw; // 100px
+    top: 2.60vw; // 50px
 
     img {
         width: 100%;
@@ -37,6 +37,6 @@
         color: #647A53;
         font-weight: 500;
         font-size: $fontsize-logo ;
-        margin-left: 30px;
+        margin-left: 1.5vw; // 30px
     }
 }
