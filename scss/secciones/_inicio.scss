@@ -1,0 +1,91 @@
+// -------------------------------------------- INICIO-------------------------------------------
+
+.inicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 12vh 10vh 0 10vh;
+
+    .cont_izq {
+        display: flex;
+        flex-direction: column;
+        margin-top: 200px;
+        margin-right: 80px;
+        gap: 70px;
+
+        .cont_text_inicio {
+
+            h1,
+            p {
+                color: $font-color1;
+            }
+
+            h1 {
+                font-weight: 600;
+                font-size: $fontsize-h1-inicio ;
+            }
+
+            p {
+                font-weight: 500;
+                font-size: $fontsize-p-inicio;
+            }
+        }
+
+        .cont_btn_inicio {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            position: relative;
+            gap: 30px;
+
+            span {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 6% 0;
+                border-radius: 1.3vw;
+                font-weight: 600;
+                font-size: $fontsize-btn-inicio;
+                color: $font-color1;
+
+                img {
+                    width: 11%;
+                }
+            }
+
+            .btn_chateanos {
+                background-color: $btn-chateanos-wp-color;
+                box-shadow: 0px 5px 10px 0px rgba(51, 204, 51, 0.25);
+            }
+
+            .btn_llamanos {
+                border: 3px solid #FFF;
+            }
+        }
+
+        .cont_info_inicio {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            span {
+                color: $font-color1;
+                font-weight: 500;
+                font-size: $fontsize-info-inicio ;
+            }
+
+            .info_inicio {
+                display: flex;
+                align-items: center;
+                gap: 10%;
+
+                img {
+                    width: 21%;
+                }
+
+                .num_info {
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
