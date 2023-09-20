@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600&display=swap');
 
+:root {
+    --slide-transform: 0;
+    --transition: all 1s ease;
+}
+
 h1,
 h2,
 h3,
@@ -36,8 +41,8 @@ body {
 .nosotros,
 .clientes,
 .contacto {
-    padding:5.208vw 5.208vw 0 5.208vw; // 100px
+    padding: 5.208vw 5.208vw 0 5.208vw; // 100px
 }
 
 // border radius botones
-$radio1:1.3vw;// 25px
+$radio1: 1.3vw; // 25px

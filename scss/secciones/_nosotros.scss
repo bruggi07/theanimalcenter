@@ -1,53 +1,70 @@
 // -------------------------------------------- NOSOTROS-------------------------------------------
-.nosotros{
+.nosotros {
     display: flex;
     flex-direction: column;
-    .tittle_nosotros{
-        h1{
+
+    .tittle_nosotros {
+        h1 {
             font-size: $fontsize-h1-inicio;
             color: $font-color1;
         }
     }
-    .cont_text_nosotros{
+
+    .cont_text_nosotros {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 4.6vw;
-        p{
+
+        p {
             font-size: $fontsize-p-btn-inicio;
             color: $font-color1;
         }
     }
-    .cont_externo_carrusel{
+
+    .cont_wrapper_carrusel {
         display: flex;
         margin-top: 5.84vw;
-        overflow: hidden;
-        .cont_interno_carrusel{
+        overflow:hidden;
+
+        .cont_carrusel {
             display: flex;
             flex-flow: row nowrap;
             align-items: start;
-            justify-content: space-between;
-            gap: 4.7vw;
-            width: 500%;
-            transform: translateX(0%); // -23.53%
-            .tar_carrusel{
+            transform: translateX(var(--slide-transform));
+            transition: var(--transition);
+
+            // -23.53%
+            .cont_principalView {
                 display: flex;
+                flex-wrap: nowrap;
+                width:  89.584vw;
+                justify-content: space-around;
+            }
+
+            .tar_carrusel {
+                display: flex;
+                position: relative;
                 flex-direction: column;
                 justify-content: center;
                 text-align: center;
-                width: calc(90vw / 5); // 5 por los 500% 
-                .img_carrusel{
+                width: 17.5vw;
+
+                .img_carrusel {
                     display: flex;
                     border-radius: 50%;
                     border: 1vw solid $color-base;
+                    background-color: $color-base;
                 }
-                h3{
+
+                h3 {
                     font-size: $fontsize-carruselName-nosotros;
                     color: $font-color1;
                     font-weight: 500;
                     margin: 2vw 0 1vw 0;
                     padding: 0;
                 }
-                p{
+
+                p {
                     font-size: $fontsize-carruselInfo-nosotros;
                     color: $font-color1;
                     font-weight: 400;
