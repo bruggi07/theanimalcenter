@@ -1,7 +1,6 @@
-import { contenedor, contenedorGrande, rootStyles, principalView, totalViews } from "./dependencias.js";
+import { contenedor, contenedorGrande, rootStyles, principalView, totalViews, widthView, getTransformValue } from "./dependencias.js";
 
-let getTransformValue = () => Number(rootStyles.getPropertyValue('--slide-transform').replace('px', ""))
-let widthView = principalView[0].scrollWidth;
+
 let contadorSlider = 0;
 let enTransicion = false;
 
@@ -37,17 +36,16 @@ function moverSliderIzquierda() {
     rootStyles.setProperty(`--slide-transform`, `${transformValue + widthView}px`);
     contadorSlider--
 }
-var intervID = setInterval(() => {
-    moverSliderDerecha();
-}, 5000);
-function LoopInterval(){
-    if(!intervID){
-        var intervID = setInterval(() => {
-            moverSliderDerecha();
-        }, 5000);
-    }
+var intervID
+function startInterval() {
+    intervID = setInterval(() => {
+        moverSliderDerecha();
+    }, 5000);
 }
-
+function stopInterval() {
+    clearInterval(intervID)
+}
+startInterval();
 reordenSlider();
 contenedor.addEventListener('transitionend', reordenSlider)
 
@@ -59,19 +57,21 @@ var mc = new Hammer(contenedor);
 
 // listen to events...
 mc.on("panleft panright pressup press", function (ev) {
-    if (ev.deltaX < 0 && enTransicion === false) {
-        clearInterval(intervID);
+
+    if (ev.type === 'panleft' && enTransicion === false) {
+        stopInterval()
         moverSliderDerecha()
+        startInterval();
     }
-    else if (ev.deltaX > 0 && enTransicion === false) {
-        clearInterval(intervID);
+    else if (ev.type === 'panright' && enTransicion === false) {
+        stopInterval()
         moverSliderIzquierda()
+        startInterval();
     }
     else if (ev.type === 'press') {
-        enTransicion = true;
-        clearInterval(intervID);
-    }else if(ev.type === 'pressup'){
+        stopInterval()
+    } else if (ev.type === 'pressup') {
         enTransicion = false
-        LoopInterval()
+        startInterval();
     }
 });

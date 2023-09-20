@@ -1,12 +1,3 @@
-
-//carrusel seccion sobre nosotros
-
-
-
-
-
-
-
 // fix scroll beheivor en todos los navegadores, con jquery-------->
 
 $(document).ready(function () {

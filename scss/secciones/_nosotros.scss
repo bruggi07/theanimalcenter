@@ -32,6 +32,12 @@
             align-items: start;
             transform: translateX(var(--slide-transform));
             transition: var(--transition);
+            &:hover{
+                cursor: pointer;
+            }
+            &:active{
+                cursor:grabbing;
+            }
 
             // -23.53%
             .cont_principalView {
