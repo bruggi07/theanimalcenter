@@ -1,0 +1,122 @@
+.contacto{
+    padding-top: 0;
+    margin-bottom: 15vw;
+    .cont_contacto{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: center;
+        align-items: center;
+        height: 37.5vw;
+        h1{
+            font-size: $fontsize-h1-inicio;
+            color: $font-color1;
+        }
+        .cont_btn_contacto{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 18.75vw; //360px
+            gap: 1.56vw; // 30px
+
+            span {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.52vw; // 10px
+                padding: 6% 0;
+                border-radius: $radio1-25px;
+                font-weight: 600;
+                font-size: $fontsize-p-btn-inicio;
+                color: $font-color1;
+
+                img {
+                    width: 11%;
+                }
+            }
+
+            .btn_chateanos {
+                background-color: $btn-chateanos-wp-color;
+                box-shadow: 0px 5px 10px 0px rgba(51, 204, 51, 0.25);
+            }
+
+            .btn_llamanos {
+                border:  0.15625vw solid #FFF; // 3px
+            }
+        }
+        .img_contacto{
+            display: flex;
+            position: relative;
+            height: 100%;
+            z-index: 0;
+            img{
+                display: flex;
+                position: absolute;
+                object-fit:contain;
+                bottom: -0.65vw;
+                height: 42vw;
+                max-width: 34.6vw;
+            }
+        }
+    }
+    .cont_contacto_data{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        height: 36.5vw;
+        justify-content: center;
+        align-items: center;
+        background: $color-base;
+        margin: 0 -5.208vw;
+        padding: 0 5.208vw;
+        z-index: 100;
+        .data_textos{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 25vw;
+            .data_contacto{
+                h3{
+                    font-size: $fontsize-DatosTitulo-contactos;
+                    color: $font-color2;
+                }
+                p{
+                    font-size: $fontsize-datps-contactos;
+                    color: $font-color2;
+                    line-height: 0.5vw;
+                }
+                .cont_redes{
+                    display: flex;
+                    gap: 0.7vw;
+                }
+                .cont_telefono{
+                    display: flex;
+                    gap: 0.2vw;
+                    img{
+                        width: $fontsize-datps-contactos;
+                    }
+                    p{
+                        display: flex;
+                        align-items: center;
+                        user-select:text;
+                        margin-right: 1vw;
+
+                    }
+                }
+            }
+        }
+        .map_google{
+            .mapa{
+                display: flex;
+                width: 45vw;
+                height: 22vw;
+                background: #FFF;
+                justify-content: center;
+                align-items: center;
+                span{
+                    color: $color-negro;
+                }
+            }
+        }
+    }
+
+}
