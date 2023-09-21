@@ -1,21 +1,20 @@
-import { contenedor, contenedorGrande, rootStyles, principalView, totalViews, widthView, getTransformValue } from "./dependencias.js";
+import { contenedor, rootStyles, totalViews, getTransformValue,widthView } from "./dependencias.js";
 
 
 let contadorSlider = 0;
 let enTransicion = false;
-
 let reordenSlider = () => {
     rootStyles.setProperty('--transition', 'none')
     if (contadorSlider === totalViews - 1) {
         var transformValue = getTransformValue();
         contenedor.appendChild(contenedor.firstElementChild);
-        rootStyles.setProperty(`--slide-transform`, `${transformValue + widthView}px`);
+        rootStyles.setProperty(`--slide-transform`, `${transformValue + widthView()}px`);
         contadorSlider--;
     }
     else if (contadorSlider === 0) {
         contenedor.prepend(contenedor.lastElementChild)
         var transformValue = getTransformValue();
-        rootStyles.setProperty(`--slide-transform`, `${transformValue - widthView}px`);
+        rootStyles.setProperty(`--slide-transform`, `${transformValue - widthView()}px`);
         contadorSlider++
     }
     enTransicion = false;
@@ -25,7 +24,7 @@ function moverSliderDerecha() {
     rootStyles.setProperty('--transition', 'all 1s ease')
     enTransicion = true;
     var transformValue = getTransformValue();
-    rootStyles.setProperty(`--slide-transform`, `${transformValue - widthView}px`);
+    rootStyles.setProperty(`--slide-transform`, `${transformValue - widthView()}px`);
     contadorSlider++
 }
 function moverSliderIzquierda() {
@@ -33,7 +32,7 @@ function moverSliderIzquierda() {
     rootStyles.setProperty('--transition', 'all 1s ease')
     enTransicion = true;
     var transformValue = getTransformValue();
-    rootStyles.setProperty(`--slide-transform`, `${transformValue + widthView}px`);
+    rootStyles.setProperty(`--slide-transform`, `${transformValue + widthView()}px`);
     contadorSlider--
 }
 var intervID

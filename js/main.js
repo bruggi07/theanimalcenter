@@ -1,8 +1,70 @@
 "use strict";
+import { SliderCliente } from "./util/dependencias.js";
 
-//clientes dicen 
-let SliderCliente = document.querySelector('.slider_clientes');
-// creando las tarjetas individuales
+
+//nosotros------
+//Construyendo las "tarjetas" para cada profesional/trabajodr
+function tarjetasCarrusel(nombre, img, cargo) {
+  const tarCar = document.createElement('DIV');
+  const imgDiv = document.createElement('DIV');
+  const imgUser = document.createElement('IMG');
+  const h3Carrusel = document.createElement('H3');
+  const pCarrusel = document.createElement('p');
+
+  //Insertando classes a los contenedores
+  tarCar.classList.add('tar_carrusel');
+  imgDiv.classList.add('img_carrusel');
+
+  //Insertando atributos a los contenedores
+  imgUser.setAttribute('src', img);
+  imgUser.setAttribute('alt', nombre)
+  h3Carrusel.textContent = nombre;
+  pCarrusel.textContent = cargo;
+
+  //Ordenando los contenedores e insertandolos en su correcto orden
+  imgDiv.appendChild(imgUser);
+  tarCar.appendChild(imgDiv);
+  tarCar.appendChild(h3Carrusel);
+  tarCar.appendChild(pCarrusel);
+  return tarCar;
+}
+
+// Cargando desde archivo json
+let URL = './js/util/nuestros_profesionales.json';
+let solicitud = new Request(URL)
+let resp = await fetch(solicitud);
+export let publi = await resp.json();
+const cargarNosotrosCarrusel = async () => {
+  try {
+    // carga los datos en cada tarjeta y cada 4 cambia de contenedor
+    let contenedor = document.querySelector('.cont_carrusel');
+    let nosContador = publi.length / 4
+    let k = 0;
+    for (let j = 0; j < nosContador; j++) {
+      const cont_view_nosotros = document.createElement('DIV');
+      cont_view_nosotros.classList.add('cont_principalView');
+      let i = 0;
+      while (i < 4 && k < publi.length) {
+        let nombre, foto, especialidad;
+        nombre = publi[k].nombre
+        especialidad = publi[k].especialidad
+        foto = publi[k].foto
+        cont_view_nosotros.appendChild(tarjetasCarrusel(nombre, foto, especialidad))
+        i++
+        k++
+      }
+      contenedor.appendChild(cont_view_nosotros);
+    }
+  }
+  catch (e) {
+    console.log('Hubo un error en cargarNosotrosCarrusel()', e)
+  }
+}
+cargarNosotrosCarrusel()
+
+//clientes dicen ----------
+
+// Construyendo las tarjetas individuales
 function tarjetaCLiente(nombre, comentario, link) {
   const contTarjeta = document.createElement('DIV');
   const contCabecera = document.createElement('DIV');
@@ -11,7 +73,7 @@ function tarjetaCLiente(nombre, comentario, link) {
   const estrellasCont = document.createElement('DIV');
   const imgEstrellas = document.createElement('IMG');
   const pTexto = document.createElement('P');
-
+  //Insertando classes a los contenedores
   contTarjeta.classList.add('tar_clientes');
   contCabecera.classList.add('cont_cabecera_tar_clientes');
   aLink.classList.add('link_clientes')
@@ -29,7 +91,7 @@ function tarjetaCLiente(nombre, comentario, link) {
   contCabecera.appendChild(estrellasCont);
   contTarjeta.appendChild(contCabecera);
   contTarjeta.appendChild(pTexto);
-  return contTarjeta
+  return contTarjeta;
 }
 
 //  cargando publicaciones desde json
@@ -37,8 +99,7 @@ const cargarPublicaciones = async () => {
   let URL = './js/util/comentarios_clientes.json';
   let solicitud = new Request(URL)
   let resp = await fetch(solicitud);
-  let arr = await resp.json();
-  let publi = arr.mensajes
+  let publi = await resp.json();
   // carga los datos en cada tarjeta y cada 3 cambia de contenedor
   let cliContador = publi.length / 3
   let k = 0;

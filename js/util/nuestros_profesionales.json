@@ -1,0 +1,87 @@
+[
+    {
+        "nombre": "Dr. Marcelo J. Regúnaga",
+        "foto": "img/nosotros/EMarcelo.png",
+        "especialidad": "Fundador - Médico clínico - Animales exóticos - Cirujano - Dermatología"
+    },
+    {
+        "nombre": "Dr. Jorge A. Guerrero",
+        "foto": "img/nosotros/Jorge.png",
+        "especialidad": "Traumatólogo - Cirujano traumatólogo"
+    },
+    {
+        "nombre": "Dr. Miguel Scarpa",
+        "foto": "img/nosotros/Miguel.png",
+        "especialidad": "Dermatólogo"
+    },
+    {
+        "nombre": "Dr. Alejo Costoya",
+        "foto": "img/nosotros/Alejo.png",
+        "especialidad": "Anestesista"
+    },
+    {
+        "nombre": "Dr. Alfredo Sepúlveda",
+        "foto": "img/nosotros/Alfredo.png",
+        "especialidad": "Médico clínico - Cardiólogo - Especialista en felinos"
+    },
+    {
+        "nombre": "Nerina Caferatta",
+        "foto": "img/nosotros/Nerina.png",
+        "especialidad": "Peluquería"
+    },
+    {
+        "nombre": "Micaela Grunbaum",
+        "foto": "img/nosotros/Micaela.png",
+        "especialidad": "Colaboradora - Laboratorio"
+    },
+    {
+        "nombre": "Viviana Martinez",
+        "foto": "img/nosotros/Viviana.png",
+        "especialidad": "Administración Pet Shop"
+    },
+    {
+        "nombre": "Dr. Gustavo Vignati",
+        "foto": "img/nosotros/Gustavo.png",
+        "especialidad": "Traumatólogo"
+    },
+    {
+        "nombre": "Dr. Lucia Demaldé",
+        "foto": "img/nosotros/Lucia.png",
+        "especialidad": "Medica clínica - Acupuntura oriental"
+    },
+    {
+        "nombre": "Dr. Ailin Rioja",
+        "foto": "img/nosotros/Ailin.png",
+        "especialidad": "Anestesista"
+    },
+    {
+        "nombre": "Dr. Flor Salvador",
+        "foto": "img/nosotros/flor1.png",
+        "especialidad": "Ecografista"
+    },
+    {
+        "nombre": "Dr. Paula Kumabe",
+        "foto": "img/nosotros/Paula.png",
+        "especialidad": "Dermatóloga"
+    },
+    {
+        "nombre": "Dr. Nilsa Cejas",
+        "foto": "img/nosotros/Nilsa.png",
+        "especialidad": "Ecografista"
+    },
+    {
+        "nombre": "Dr. Julián Peralta",
+        "foto": "img/nosotros/Julian.png",
+        "especialidad": "Fisioterapeuta"
+    },
+    {
+        "nombre": "Dr. Pablo Otero",
+        "foto": "img/nosotros/Pablo.png",
+        "especialidad": "Anestesista"
+    },
+    {
+        "nombre": "Dr. Soledad Barboza",
+        "foto": "img/nosotros/Soledad.png",
+        "especialidad": "Hematología"
+    }
+]
