@@ -70,7 +70,7 @@ mc.on("panleft panright pressup press", function (ev) {
     }
     else if (ev.type === 'press') {
         stopInterval()
-    } else if (ev.type === 'pressup') {
+    }else if (ev.type === 'pressup') {
         enTransicion = false
         startInterval();
     }

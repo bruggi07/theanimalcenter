@@ -1,0 +1,86 @@
+.clientes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .tittle_clientes {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+
+        h1 {
+            font-size: $fontsize-h1-inicio;
+            color: $font-color1;
+        }
+    }
+
+    .cont_clientes {
+        display: flex;
+        position: relative;
+        background: $color-base;
+        margin: 0 -5.208vw;
+        padding: 3.75vw 12vw;
+
+        .btn_izq,
+        .btn_derech {
+            display: flex;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2%;
+        }
+        .btn_izq{
+            left: 7.3vw;
+        }
+        .btn_derech{
+            right: 7.3vw;
+        }
+        .cont_slider {
+            display: flex;
+            position: relative;
+            overflow: hidden;
+
+
+            .slider_clientes {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                height: 17.708vw;
+                // transform: translateX(-80%);
+                .view_clientes {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-around;
+                    width: 75.3vw;
+
+                    .tar_clientes {
+                        display: flex;
+                        flex-direction: column;
+                        width: 23.43vw;
+                        background: $color-slider-bg;
+                        border-radius: $radio1-25px;
+                        padding: 1.3vw;
+                        h3,
+                        p {
+                            font-size: $fontsize-text-clientes;
+                            color: $font-color2;
+                        }
+
+                        .cont_cabecera_tar_clientes {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            align-items: center;
+
+                            .link_clientes {
+                                position: relative;
+                                text-align: end;
+                                font-size: $fontsize-goggleText-clientes;
+                                color: $font-color2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
