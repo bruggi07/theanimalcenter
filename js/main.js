@@ -3,23 +3,25 @@ import { SliderCliente } from "./util/dependencias.js";
 
 
 //nosotros------
-//Construyendo las "tarjetas" para cada profesional/trabajodr
-function tarjetasCarrusel(nombre, img, cargo) {
-  const tarCar = document.createElement('DIV');
-  const imgDiv = document.createElement('DIV');
-  const imgUser = document.createElement('IMG');
-  const h3Carrusel = document.createElement('H3');
-  const pCarrusel = document.createElement('p');
 
-  //Insertando classes a los contenedores
-  tarCar.classList.add('tar_carrusel');
-  imgDiv.classList.add('img_carrusel');
+//construccion de elementos de DOM
+function crearElemento(tag, classNombre = '', textContent = '') {
+  const elemento = document.createElement(tag);
+  if (classNombre) elemento.classList.add(classNombre);
+  if (textContent) elemento.textContent = textContent;
+  return elemento;
+}
+//Construyendo las "tarjetas" para cada profesional/trabajador || funcion crearElemento(tagHTML,clase,textoDentro)
+function tarjetasCarrusel(nombre, img, cargo) {
+  const tarCar = crearElemento('DIV', 'tar_carrusel');
+  const imgDiv = crearElemento('DIV', 'img_carrusel');
+  const imgUser = crearElemento('IMG');
+  const h3Carrusel = crearElemento('H3', '', nombre);
+  const pCarrusel = crearElemento('p', '', cargo);
 
   //Insertando atributos a los contenedores
   imgUser.setAttribute('src', img);
-  imgUser.setAttribute('alt', nombre)
-  h3Carrusel.textContent = nombre;
-  pCarrusel.textContent = cargo;
+  imgUser.setAttribute('alt', nombre);
 
   //Ordenando los contenedores e insertandolos en su correcto orden
   imgDiv.appendChild(imgUser);
@@ -28,36 +30,36 @@ function tarjetasCarrusel(nombre, img, cargo) {
   tarCar.appendChild(pCarrusel);
   return tarCar;
 }
-
-// Cargando desde archivo json
-let URL = './js/util/nuestros_profesionales.json';
-let solicitud = new Request(URL)
-let resp = await fetch(solicitud);
-export let publi = await resp.json();
 const cargarNosotrosCarrusel = async () => {
   try {
+    // Cargando desde archivo json
+    let URL = './js/JSON/nuestros_profesionales.json';
+    let solicitud = new Request(URL);
+    let resp = await fetch(solicitud);
+    let publi = await resp.json();
+
     // carga los datos en cada tarjeta y cada 4 cambia de contenedor
     let contenedor = document.querySelector('.cont_carrusel');
-    let nosContador = publi.length / 4
-    let k = 0;
-    for (let j = 0; j < nosContador; j++) {
-      const cont_view_nosotros = document.createElement('DIV');
-      cont_view_nosotros.classList.add('cont_principalView');
-      let i = 0;
-      while (i < 4 && k < publi.length) {
-        let nombre, foto, especialidad;
-        nombre = publi[k].nombre
-        especialidad = publi[k].especialidad
-        foto = publi[k].foto
-        cont_view_nosotros.appendChild(tarjetasCarrusel(nombre, foto, especialidad))
-        i++
-        k++
+
+    //Extrae y crea grupos de 4 profesionales del archivo JSON con los profesionales cargados
+    const gruposDeProfesionales = publi.reduce((acumulador, current, index, array) => {
+      if (index % 4 === 0) {
+        acumulador.push(array.slice(index, index + 4))
       }
+      return acumulador
+    }, []);
+
+    //Recorre los arrays y e inserta en cada grupo de profesionales, cada profesional
+    gruposDeProfesionales.forEach(profesionales => {
+      const cont_view_nosotros = crearElemento('DIV', 'cont_principalView');
+      profesionales.forEach(({ nombre, foto, especialidad }) => {
+        cont_view_nosotros.appendChild(tarjetasCarrusel(nombre, foto, especialidad));
+      });
       contenedor.appendChild(cont_view_nosotros);
-    }
-  }
-  catch (e) {
-    console.log('Hubo un error en cargarNosotrosCarrusel()', e)
+    });
+
+  } catch (e) {
+    console.log('ERROR EN cargarNosotrosCarrusel(), el error es', e);
   }
 }
 cargarNosotrosCarrusel()
@@ -66,25 +68,18 @@ cargarNosotrosCarrusel()
 
 // Construyendo las tarjetas individuales
 function tarjetaCLiente(nombre, comentario, link) {
-  const contTarjeta = document.createElement('DIV');
-  const contCabecera = document.createElement('DIV');
-  const h3Nombre = document.createElement('H3');
-  const aLink = document.createElement('a');
-  const estrellasCont = document.createElement('DIV');
-  const imgEstrellas = document.createElement('IMG');
-  const pTexto = document.createElement('P');
-  //Insertando classes a los contenedores
-  contTarjeta.classList.add('tar_clientes');
-  contCabecera.classList.add('cont_cabecera_tar_clientes');
-  aLink.classList.add('link_clientes')
-  estrellasCont.classList.add('estrellas_tar_clientes');
+  const contTarjeta = crearElemento('DIV', 'tar_clientes');
+  const contCabecera = crearElemento('DIV', 'cont_cabecera_tar_clientes');
+  const h3Nombre = crearElemento('H3', '', nombre);
+  const aLink = crearElemento('a', 'link_clientes', 'Comentarios Google');
+  const estrellasCont = crearElemento('DIV', 'estrellas_tar_clientes');
+  const imgEstrellas = crearElemento('IMG');
+  const pTexto = crearElemento('P', '', comentario);
 
-  h3Nombre.textContent = nombre;
-  pTexto.textContent = comentario;
   imgEstrellas.setAttribute('src', 'img/clientes/Estrellitas.svg');
-  aLink.setAttribute('href', link)
-  aLink.textContent = 'Comentarios google';
+  aLink.setAttribute('href', link);
 
+  //Ordenando los contenedores e insertandolos en su correcto orden
   estrellasCont.appendChild(imgEstrellas);
   contCabecera.appendChild(h3Nombre);
   contCabecera.appendChild(aLink);
@@ -96,31 +91,34 @@ function tarjetaCLiente(nombre, comentario, link) {
 
 //  cargando publicaciones desde json
 const cargarPublicaciones = async () => {
-  let URL = './js/util/comentarios_clientes.json';
-  let solicitud = new Request(URL)
-  let resp = await fetch(solicitud);
-  let publi = await resp.json();
-  // carga los datos en cada tarjeta y cada 3 cambia de contenedor
-  let cliContador = publi.length / 3
-  let k = 0;
-  for (let j = 0; j < cliContador; j++) {
-    const cont_view_clientes = document.createElement('DIV');
-    cont_view_clientes.classList.add('view_clientes');
+  try {
+    let URL = './js/JSON/comentarios_clientes.json';
+    let solicitud = new Request(URL);
+    let resp = await fetch(solicitud);
+    let publi = await resp.json();
 
-    let i = 0;
-    while (i < 3 && k < publi.length) {
-      let nombre, mensaje, link;
-      nombre = publi[k].nombre
-      mensaje = publi[k].mensaje
-      link = publi[k].link
-      cont_view_clientes.appendChild(tarjetaCLiente(nombre, mensaje, link))
-      i++
-      k++
-    }
-    SliderCliente.appendChild(cont_view_clientes);
+    // carga los datos en cada tarjeta y cada 3 cambia de contenedor
+
+    const cont_view_clientes = crearElemento('DIV', 'view_clientes');
+    const grupoMensajes = publi.reduce((acc, curr, index, array) => {
+      if (index % 3 === 0) {
+        acc.push(array.slice(index, index + 3))
+      }
+      return acc
+    }, []);
+
+    grupoMensajes.forEach(mensajes => {
+      const cont_view_clientes = crearElemento('DIV', 'view_clientes');
+      mensajes.forEach(({ nombre, mensaje, link }) => {
+        cont_view_clientes.appendChild(tarjetaCLiente(nombre, mensaje, link))
+      });
+      SliderCliente.appendChild(cont_view_clientes);
+    });
+  } catch (err) {
+    console.log('ERROR EN cargarPublicaciones!!, el error es: ', err)
   }
 };
-cargarPublicaciones()
+cargarPublicaciones();
 
 
 // fix scroll beheivor en todos los navegadores, con jquery-------->

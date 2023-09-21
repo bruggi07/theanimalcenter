@@ -87,6 +87,7 @@
                 .cont_redes{
                     display: flex;
                     gap: 0.7vw;
+                    width: 2.3vw;
                 }
                 .cont_telefono{
                     display: flex;
@@ -105,13 +106,13 @@
             }
         }
         .map_google{
+            display: flex;
+            width: 45vw;
+            height: 22vw;
+            background: #FFF;
+            justify-content: center;
+            align-items: center;
             .mapa{
-                display: flex;
-                width: 45vw;
-                height: 22vw;
-                background: #FFF;
-                justify-content: center;
-                align-items: center;
                 span{
                     color: $color-negro;
                 }
