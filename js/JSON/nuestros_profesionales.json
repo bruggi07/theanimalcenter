@@ -1,87 +1,87 @@
 [
     {
         "nombre": "Dr. Marcelo J. Regúnaga",
-        "foto": "img/nosotros/EMarcelo.png",
+        "foto": "img/nosotros/EMarcelo.webp",
         "especialidad": "Fundador - Médico clínico - Animales exóticos - Cirujano - Dermatología"
     },
     {
         "nombre": "Dr. Jorge A. Guerrero",
-        "foto": "img/nosotros/Jorge.png",
+        "foto": "img/nosotros/Jorge.webp",
         "especialidad": "Traumatólogo - Cirujano traumatólogo"
     },
     {
         "nombre": "Dr. Miguel Scarpa",
-        "foto": "img/nosotros/Miguel.png",
+        "foto": "img/nosotros/Miguel.webp",
         "especialidad": "Dermatólogo"
     },
     {
         "nombre": "Dr. Alejo Costoya",
-        "foto": "img/nosotros/Alejo.png",
+        "foto": "img/nosotros/Alejo.webp",
         "especialidad": "Anestesista"
     },
     {
         "nombre": "Dr. Alfredo Sepúlveda",
-        "foto": "img/nosotros/Alfredo.png",
+        "foto": "img/nosotros/Alfredo.webp",
         "especialidad": "Médico clínico - Cardiólogo - Especialista en felinos"
     },
     {
         "nombre": "Nerina Caferatta",
-        "foto": "img/nosotros/Nerina.png",
+        "foto": "img/nosotros/Nerina.webp",
         "especialidad": "Peluquería"
     },
     {
         "nombre": "Micaela Grunbaum",
-        "foto": "img/nosotros/Micaela.png",
+        "foto": "img/nosotros/Micaela.webp",
         "especialidad": "Colaboradora - Laboratorio"
     },
     {
         "nombre": "Viviana Martinez",
-        "foto": "img/nosotros/Viviana.png",
+        "foto": "img/nosotros/Viviana.webp",
         "especialidad": "Administración Pet Shop"
     },
     {
         "nombre": "Dr. Gustavo Vignati",
-        "foto": "img/nosotros/Gustavo.png",
+        "foto": "img/nosotros/Gustavo.webp",
         "especialidad": "Traumatólogo"
     },
     {
         "nombre": "Dr. Lucia Demaldé",
-        "foto": "img/nosotros/Lucia.png",
+        "foto": "img/nosotros/Lucia.webp",
         "especialidad": "Medica clínica - Acupuntura oriental"
     },
     {
         "nombre": "Dr. Ailin Rioja",
-        "foto": "img/nosotros/Ailin.png",
+        "foto": "img/nosotros/Ailin.webp",
         "especialidad": "Anestesista"
     },
     {
         "nombre": "Dr. Flor Salvador",
-        "foto": "img/nosotros/flor1.png",
+        "foto": "img/nosotros/Flor1.webp",
         "especialidad": "Ecografista"
     },
     {
         "nombre": "Dr. Paula Kumabe",
-        "foto": "img/nosotros/Paula.png",
+        "foto": "img/nosotros/Paula.webp",
         "especialidad": "Dermatóloga"
     },
     {
         "nombre": "Dr. Nilsa Cejas",
-        "foto": "img/nosotros/Nilsa.png",
+        "foto": "img/nosotros/Nilsa.webp",
         "especialidad": "Ecografista"
     },
     {
         "nombre": "Dr. Julián Peralta",
-        "foto": "img/nosotros/Julian.png",
+        "foto": "img/nosotros/Julian.webp",
         "especialidad": "Fisioterapeuta"
     },
     {
         "nombre": "Dr. Pablo Otero",
-        "foto": "img/nosotros/Pablo.png",
+        "foto": "img/nosotros/Pablo.webp",
         "especialidad": "Anestesista"
     },
     {
         "nombre": "Dr. Soledad Barboza",
-        "foto": "img/nosotros/Soledad.png",
+        "foto": "img/nosotros/Soledad.webp",
         "especialidad": "Hematología"
     }
 ]
