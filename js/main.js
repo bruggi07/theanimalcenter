@@ -38,7 +38,6 @@ const cargarNosotrosCarrusel = async () => {
     let resp = await fetch(solicitud);
     let publi = await resp.json();
 
-    // carga los datos en cada tarjeta y cada 4 cambia de contenedor
     let contenedor = document.querySelector('.cont_carrusel');
 
     //Extrae y crea grupos de 4 profesionales del archivo JSON con los profesionales cargados
@@ -62,7 +61,7 @@ const cargarNosotrosCarrusel = async () => {
     console.log('ERROR EN cargarNosotrosCarrusel(), el error es', e);
   }
 }
-cargarNosotrosCarrusel()
+cargarNosotrosCarrusel();
 
 //clientes dicen ----------
 

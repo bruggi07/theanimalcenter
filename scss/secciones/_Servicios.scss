@@ -35,26 +35,30 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 0.52vw 0.78vw; // 10px 15px
+                padding: 1.25vw; // 24px
                 .cont-icon-tit{
                     display: flex;
                     flex-direction: row;
+                    align-items: center;
                     gap: 0.5vw;
                 }
                 .cont-icon-servicios {
                     display: flex;
                     width: 2vw;
+                    height: 2vw;
                 }
                 .cont-lista-serv{
                     color: $font-color2;
                     font-size: $fontsize-lista-servicios;
                     font-weight: 500;
+                    margin-top: 0.68vw;
                 }
 
                 .tittle_tar_servicios {
                     font-size: $fontsize-tittle-servicios;
                     color: $font-color2;
                     font-weight: 600;
+                    margin: 0;
                 }
             }
 

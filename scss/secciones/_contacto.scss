@@ -31,6 +31,8 @@
                 color: $font-color1;
 
                 img {
+                    position: absolute;
+                    left:1.35vw ;
                     width: 11%;
                 }
             }
@@ -78,11 +80,13 @@
                 h3{
                     font-size: $fontsize-DatosTitulo-contactos;
                     color: $font-color2;
+                    font-weight: 600;
                 }
                 p{
                     font-size: $fontsize-datps-contactos;
                     color: $font-color2;
                     line-height: 0.5vw;
+                    font-weight: 500;
                 }
                 .cont_redes{
                     display: flex;
