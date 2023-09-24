@@ -1,5 +1,5 @@
 "use strict";
-import { SliderCliente } from "./util/dependencias.js";
+import { SliderCliente, cargaDeProf, gruposDeProfesionales,grupoMensajes } from "./util/dependencias.js";
 
 
 //nosotros------
@@ -30,24 +30,11 @@ function tarjetasCarrusel(nombre, img, cargo) {
   tarCar.appendChild(pCarrusel);
   return tarCar;
 }
-const cargarNosotrosCarrusel = async () => {
+
+
+export const cargarNosotrosCarrusel = () => {
   try {
-    // Cargando desde archivo json
-    let URL = './js/JSON/nuestros_profesionales.json';
-    let solicitud = new Request(URL);
-    let resp = await fetch(solicitud);
-    let publi = await resp.json();
-
     let contenedor = document.querySelector('.cont_carrusel');
-
-    //Extrae y crea grupos de 4 profesionales del archivo JSON con los profesionales cargados
-    const gruposDeProfesionales = publi.reduce((acumulador, current, index, array) => {
-      if (index % 4 === 0) {
-        acumulador.push(array.slice(index, index + 4))
-      }
-      return acumulador
-    }, []);
-
     //Recorre los arrays y e inserta en cada grupo de profesionales, cada profesional
     gruposDeProfesionales.forEach(profesionales => {
       const cont_view_nosotros = crearElemento('DIV', 'cont_principalView');
@@ -61,7 +48,6 @@ const cargarNosotrosCarrusel = async () => {
     console.log('ERROR EN cargarNosotrosCarrusel(), el error es', e);
   }
 }
-cargarNosotrosCarrusel();
 
 //clientes dicen ----------
 
@@ -89,23 +75,7 @@ function tarjetaCLiente(nombre, comentario, link) {
 }
 
 //  cargando publicaciones desde json
-const cargarPublicaciones = async () => {
-  try {
-    let URL = './js/JSON/comentarios_clientes.json';
-    let solicitud = new Request(URL);
-    let resp = await fetch(solicitud);
-    let publi = await resp.json();
-
-    // carga los datos en cada tarjeta y cada 3 cambia de contenedor
-
-    const cont_view_clientes = crearElemento('DIV', 'view_clientes');
-    const grupoMensajes = publi.reduce((acc, curr, index, array) => {
-      if (index % 3 === 0) {
-        acc.push(array.slice(index, index + 3))
-      }
-      return acc
-    }, []);
-
+const cargarPublicaciones = () => {
     grupoMensajes.forEach(mensajes => {
       const cont_view_clientes = crearElemento('DIV', 'view_clientes');
       mensajes.forEach(({ nombre, mensaje, link }) => {
@@ -113,9 +83,6 @@ const cargarPublicaciones = async () => {
       });
       SliderCliente.appendChild(cont_view_clientes);
     });
-  } catch (err) {
-    console.log('ERROR EN cargarPublicaciones!!, el error es: ', err)
-  }
 };
 cargarPublicaciones();
 

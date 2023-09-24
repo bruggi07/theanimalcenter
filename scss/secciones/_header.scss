@@ -6,6 +6,7 @@
     width: 100%;
     top: 1.5vw; //30px
     justify-content: center;
+    z-index: 100;
 
     .nav_menu {
         display: flex;
@@ -15,7 +16,7 @@
             color: $font-color1;
             font-size: $fontsize-nav;
             font-weight: 600;
-            text-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
     }
 }

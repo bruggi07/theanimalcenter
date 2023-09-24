@@ -1,6 +1,7 @@
+import { cargarNosotrosCarrusel } from "../main.js";
 import { contenedor, rootStyles, totalViews, getTransformValue, widthView } from "./dependencias.js";
 
-
+cargarNosotrosCarrusel();
 let contadorSlider = 0;
 let enTransicion = false;
 let reordenSlider = () => {

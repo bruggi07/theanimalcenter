@@ -28,6 +28,12 @@
             top: 0;
             bottom: 0;
             width: 2%;
+            &:active{
+                scale: 0.9;
+            }
+            &:hover{
+                cursor: pointer;
+            }
         }
         .btn_izq{
             left: 7.3vw;
