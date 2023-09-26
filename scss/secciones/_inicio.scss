@@ -3,12 +3,12 @@
 .inicio {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 5.21vw; // 100px
+    padding-top: 7vw; // 100px
 
     .cont_izq {
         display: flex;
         flex-direction: column;
-        margin-top: 10.42vw; // 100px
+        margin-top: 10vw; // 100px
         gap: 3.65vw; // 70px
 
         .cont_text_inicio {
