@@ -15,6 +15,8 @@
         gap: 4.16vw; //80px
 
         a {
+            display: flex;
+            position: relative;
             color: $font-color1;
             font-size: $fontsize-nav;
             font-weight: 600;
@@ -22,6 +24,27 @@
 
             &:active {
                 scale: 0.95;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -0.1vw;
+                background-color: $font-color1;
+                width: 100%;
+                height: 0.15vw;
+                border-radius: 10vw;
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                transition: transform .3s ease-out;
+
+            }
+        }
+
+        .seleccionado {
+            &::before {
+                transform: scaleX(1);
+                transform-origin: bottom left;
             }
         }
     }
@@ -52,7 +75,7 @@
 
 // -------------------------------------------- HEADER SCROLL-------------------------------------------
 
-.scrollMenu {
+.menuScroll {
     position: fixed;
     background: $color-base;
     // background: #bde580c4;
@@ -64,7 +87,7 @@
 
     .img_logo {
         top: 0;
-        width: 100%;
+        width: 20vw;
         height: $height-scroll;
 
         img {
@@ -74,7 +97,6 @@
 
         span {
             font-size: 1.04vw;
-            width: 100%;
         }
     }
 

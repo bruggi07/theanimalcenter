@@ -52,7 +52,7 @@ let widthView = function width() {
 
 //Carrusel clientes
 let SliderCliente = document.querySelector('.slider_clientes');
-
+let link = 'https://www.google.com/search?q=the+animal+center+bs+as&sca_esv=568605030&sxsrf=AM9HkKmlaqFn531dQomUvkmFXOT8kqCDoA%3A1695760500804&ei=dEATZYDOMOqJ4dUPqbO_8AM&ved=0ahUKEwiA2JiSkMmBAxXqRLgEHanZDz4Q4dUDCBA&uact=5&oq=the+animal+center+bs+as&gs_lp=Egxnd3Mtd2l6LXNlcnAiF3RoZSBhbmltYWwgY2VudGVyIGJzIGFzMgUQIRigAUjeC1C3BFi9CnABeACQAQCYAb8BoAHQBaoBAzEuNbgBA8gBAPgBAcICBxAjGLADGCfCAg4QLhiABBjHARivARiwA8ICBxAAGB4YsAPCAgkQABgIGB4YsAPCAgQQIxgnwgILEC4YgAQYxwEYrwHCAgYQABgWGB7CAgUQABiiBMICCBAhGBYYHhgd4gMEGAEgQYgGAZAGCg&sclient=gws-wiz-serp#lrd=0x95bcca8539294d17:0x1bcd278cd8b81cd8,1,,,,'
 let cargaDeCli = async () => {
     let URL = './js/JSON/comentarios_clientes.json';
     let solicitud = new Request(URL);
@@ -70,4 +70,4 @@ const grupoMensajes = publiCli.reduce((acc, curr, index, array) => {
 
 
 
-export { contenedor, contenedorGrande, totalViews, principalView, rootStyles, getTransformValue, SliderCliente, widthView, cargaDeProf, gruposDeProfesionales, grupoMensajes }
+export { contenedor, contenedorGrande, totalViews, principalView, rootStyles, getTransformValue, SliderCliente, widthView, cargaDeProf, gruposDeProfesionales, grupoMensajes, link }
