@@ -51,7 +51,7 @@ export const cargarNosotrosCarrusel = () => {
 //clientes dicen ----------
 
 // Construyendo las tarjetas individuales
-function tarjetaCLiente(nombre, comentario, link) {
+function tarjetaCLiente(nombre, comentario) {
   const contTarjeta = crearElemento('DIV', 'tar_clientes');
   const contCabecera = crearElemento('DIV', 'cont_cabecera_tar_clientes');
   const h3Nombre = crearElemento('H3', '', nombre);
@@ -61,7 +61,9 @@ function tarjetaCLiente(nombre, comentario, link) {
   const pTexto = crearElemento('P', '', comentario);
 
   imgEstrellas.setAttribute('src', 'img/clientes/Estrellitas.svg');
-  aLink.setAttribute('href', link);
+  let link = 'https://www.google.com/search?q=the+animal+center+bs+as&sca_esv=568605030&sxsrf=AM9HkKmlaqFn531dQomUvkmFXOT8kqCDoA%3A1695760500804&ei=dEATZYDOMOqJ4dUPqbO_8AM&ved=0ahUKEwiA2JiSkMmBAxXqRLgEHanZDz4Q4dUDCBA&uact=5&oq=the+animal+center+bs+as&gs_lp=Egxnd3Mtd2l6LXNlcnAiF3RoZSBhbmltYWwgY2VudGVyIGJzIGFzMgUQIRigAUjeC1C3BFi9CnABeACQAQCYAb8BoAHQBaoBAzEuNbgBA8gBAPgBAcICBxAjGLADGCfCAg4QLhiABBjHARivARiwA8ICBxAAGB4YsAPCAgkQABgIGB4YsAPCAgQQIxgnwgILEC4YgAQYxwEYrwHCAgYQABgWGB7CAgUQABiiBMICCBAhGBYYHhgd4gMEGAEgQYgGAZAGCg&sclient=gws-wiz-serp#lrd=0x95bcca8539294d17:0x1bcd278cd8b81cd8,1,,,,'
+  aLink.setAttribute('href', link );
+  aLink.setAttribute('target','_blank')
 
   //Ordenando los contenedores e insertandolos en su correcto orden
   estrellasCont.appendChild(imgEstrellas);
@@ -77,8 +79,8 @@ function tarjetaCLiente(nombre, comentario, link) {
 const cargarPublicaciones = () => {
   grupoMensajes.forEach(mensajes => {
     const cont_view_clientes = crearElemento('DIV', 'view_clientes');
-    mensajes.forEach(({ nombre, mensaje, link }) => {
-      cont_view_clientes.appendChild(tarjetaCLiente(nombre, mensaje, link))
+    mensajes.forEach(({ nombre, mensaje }) => {
+      cont_view_clientes.appendChild(tarjetaCLiente(nombre, mensaje))
     });
     SliderCliente.appendChild(cont_view_clientes);
   });
@@ -89,7 +91,7 @@ cargarPublicaciones();
 // fix scroll beheivor en todos los navegadores, con jquery-------->
 $(document).ready(function () {
   // Add smooth scrolling to all links
-  $("a").on('click', function (event) {
+  $(".alink").on('click', function (event) {
 
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
