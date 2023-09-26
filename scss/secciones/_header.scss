@@ -1,18 +1,20 @@
 // -------------------------------------------- HEADER-------------------------------------------
-
+$height-scroll: 3.8vw;
 .menu {
     display: flex;
     position: absolute;
     width: 100%;
-    top: 2.6vw;
+    margin-top: 1.35vw;
+    height: $height-scroll;
     justify-content: center;
     align-items: center;
     z-index: 100;
-    transition: all .3s ease-out;
+    transition: all .3s ease-out,background 0.3s ease-out;
 
     .nav_menu {
         display: flex;
         gap: 4.16vw; //80px
+        transition: all .3s ease-out;
 
         a {
             display: flex;
@@ -56,11 +58,13 @@
         position: absolute;
         align-items: center;
         left: 5.208vw; // 100px
-        top: 1.8vw; // 50px
+        top: 3.15vw; // 50px
+        transition: all .5s ease-out;
 
         img {
-            width: 100%;
-            height: 100%;
+            width: 9.4vw;
+            height: 9.4vw;
+            transition: all .5s ease-out;
         }
 
         span {
@@ -68,6 +72,7 @@
             font-weight: 500;
             font-size: $fontsize-logo ;
             margin-left: 1.5vw; // 30px
+            transition: all .3s ease-out;
         }
     }
 }
@@ -78,13 +83,11 @@
 .menuScroll {
     position: fixed;
     background: $color-base;
+    margin-top: 0;
     // background: #bde580c4;
     // backdrop-filter: blur(0.5vw);
     // -webkit-backdrop-filter: blur(0.5vw);
-    $height-scroll: 3.8vw;
-    height: $height-scroll;
-    top: 0;
-
+    transition: all .3s ease-out,background 1s ease-out;
     .img_logo {
         top: 0;
         width: 20vw;
@@ -93,6 +96,7 @@
         img {
             width: 2.8vw;
             height: 2.8vw;
+            transition: all .5s ease-out;
         }
 
         span {

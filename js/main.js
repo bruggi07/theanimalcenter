@@ -6,6 +6,51 @@ let ano = new Date().getFullYear();
 let span = document.getElementById('ano_actual')
 span.innerHTML = ano;
 
+//observer
+let secciones = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entradas) => {
+
+  entradas.forEach(entrada => {
+    const id = entrada.target.getAttribute('id');
+    const menuLink = document.querySelector(`nav a[href="#${id}"]`);
+
+
+    if (entrada.isIntersecting) {
+
+      let seleccionado = document.querySelector('nav a.seleccionado');
+      if (seleccionado != null) {
+        seleccionado.classList.remove('seleccionado');
+      }
+      menuLink.classList.add('seleccionado');
+
+    }
+
+  });
+}
+  , {
+    rootMargin: '-50% 0% -50% 0%'
+  });
+secciones.forEach(seccion => observer.observe(seccion))
+
+//Menu Scroll
+
+let prevY = window.scrollY;
+let menu = document.querySelector('.menu');
+
+	window.addEventListener('scroll', function () {
+    console.log(prevY)
+		if (prevY < this.scrollY) {
+			menu.classList.add('menuScroll')
+
+		} else if (prevY < 10) {
+      menu.classList.remove('menuScroll')
+
+		};
+
+		prevY = window.scrollY
+	});
+
+
 //nosotros------
 
 //construccion de elementos de DOM
@@ -61,8 +106,8 @@ function tarjetaCLiente(nombre, comentario) {
   const pTexto = crearElemento('P', '', comentario);
 
   imgEstrellas.setAttribute('src', 'img/clientes/Estrellitas.svg');
-  aLink.setAttribute('href', link );
-  aLink.setAttribute('target','_blank')
+  aLink.setAttribute('href', link);
+  aLink.setAttribute('target', '_blank')
 
   //Ordenando los contenedores e insertandolos en su correcto orden
   estrellasCont.appendChild(imgEstrellas);
