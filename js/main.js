@@ -1,6 +1,10 @@
 "use strict";
-import { SliderCliente, cargaDeProf, gruposDeProfesionales,grupoMensajes } from "./util/dependencias.js";
+import { SliderCliente, cargaDeProf, gruposDeProfesionales, grupoMensajes } from "./util/dependencias.js";
 
+//año actual en footer
+let ano = new Date().getFullYear();
+let span = document.getElementById('ano_actual')
+span.innerHTML = ano;
 
 //nosotros------
 
@@ -33,20 +37,15 @@ function tarjetasCarrusel(nombre, img, cargo) {
 
 
 export const cargarNosotrosCarrusel = () => {
-  try {
-    let contenedor = document.querySelector('.cont_carrusel');
-    //Recorre los arrays y e inserta en cada grupo de profesionales, cada profesional
-    gruposDeProfesionales.forEach(profesionales => {
-      const cont_view_nosotros = crearElemento('DIV', 'cont_principalView');
-      profesionales.forEach(({ nombre, foto, especialidad }) => {
-        cont_view_nosotros.appendChild(tarjetasCarrusel(nombre, foto, especialidad));
-      });
-      contenedor.appendChild(cont_view_nosotros);
+  let contenedor = document.querySelector('.cont_carrusel');
+  //Recorre los arrays y e inserta en cada grupo de profesionales, cada profesional
+  gruposDeProfesionales.forEach(profesionales => {
+    const cont_view_nosotros = crearElemento('DIV', 'cont_principalView');
+    profesionales.forEach(({ nombre, foto, especialidad }) => {
+      cont_view_nosotros.appendChild(tarjetasCarrusel(nombre, foto, especialidad));
     });
-
-  } catch (e) {
-    console.log('ERROR EN cargarNosotrosCarrusel(), el error es', e);
-  }
+    contenedor.appendChild(cont_view_nosotros);
+  });
 }
 
 //clientes dicen ----------
@@ -76,13 +75,13 @@ function tarjetaCLiente(nombre, comentario, link) {
 
 //  cargando publicaciones desde json
 const cargarPublicaciones = () => {
-    grupoMensajes.forEach(mensajes => {
-      const cont_view_clientes = crearElemento('DIV', 'view_clientes');
-      mensajes.forEach(({ nombre, mensaje, link }) => {
-        cont_view_clientes.appendChild(tarjetaCLiente(nombre, mensaje, link))
-      });
-      SliderCliente.appendChild(cont_view_clientes);
+  grupoMensajes.forEach(mensajes => {
+    const cont_view_clientes = crearElemento('DIV', 'view_clientes');
+    mensajes.forEach(({ nombre, mensaje, link }) => {
+      cont_view_clientes.appendChild(tarjetaCLiente(nombre, mensaje, link))
     });
+    SliderCliente.appendChild(cont_view_clientes);
+  });
 };
 cargarPublicaciones();
 

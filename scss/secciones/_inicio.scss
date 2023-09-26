@@ -42,8 +42,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 0.52vw; // 10px
-                padding: 6% 0;
+                padding: 1.35vw 0;
                 border-radius: $radio1-25px;
                 font-weight: 600;
                 font-size: $fontsize-p-btn-inicio;
@@ -52,7 +51,7 @@
                 img {
                     position: absolute;
                     left: 1.35vw;
-                    width: 11%;
+                    width: 2.5vw;
                 }
             }
 

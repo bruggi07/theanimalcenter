@@ -52,7 +52,6 @@
                 flex-wrap: nowrap;
                 justify-content: center;
                 height: 17.708vw;
-                // transform: translateX(-80%);
                 .view_clientes {
                     display: flex;
                     flex-flow: row nowrap;
@@ -70,13 +69,20 @@
                         p {
                             font-size: $fontsize-text-clientes;
                             color: $font-color2;
+                            font-weight: 500;
                         }
 
                         .cont_cabecera_tar_clientes {
                             display: grid;
                             grid-template-columns: 1fr 1fr;
                             align-items: center;
-
+                            .estrellas_tar_clientes{
+                                margin-top: -0.5vw;
+                                margin-bottom: 0.5vw;
+                                img{
+                                    width: 5vw;
+                                }
+                            }
                             .link_clientes {
                                 position: relative;
                                 text-align: end;

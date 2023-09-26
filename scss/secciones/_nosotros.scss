@@ -25,9 +25,6 @@
         display: flex;
         margin-top: 5.84vw;
         overflow:hidden;
-        .widthcarrusel{
-            width:89.584vw;
-        }
         .cont_carrusel {
             display: flex;
             flex-flow: row nowrap;
@@ -53,9 +50,8 @@
                 display: flex;
                 position: relative;
                 flex-direction: column;
-                justify-content: center;
                 text-align: center;
-                width: 17.5vw;
+                width: 16.4vw;
 
                 .img_carrusel {
                     display: flex;
