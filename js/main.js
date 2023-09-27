@@ -15,14 +15,13 @@ const observer = new IntersectionObserver((entradas) => {
     const menuLink = document.querySelector(`nav a[href="#${id}"]`);
 
 
-    if (entrada.isIntersecting) {
+    if (entrada.isIntersecting && entrada.target.className != 'clientes') {
 
       let seleccionado = document.querySelector('nav a.seleccionado');
       if (seleccionado != null) {
         seleccionado.classList.remove('seleccionado');
       }
-      menuLink.classList.add('seleccionado');
-
+        menuLink.classList.add('seleccionado');
     }
 
   });
@@ -38,7 +37,6 @@ let prevY = window.scrollY;
 let menu = document.querySelector('.menu');
 
 	window.addEventListener('scroll', function () {
-    console.log(prevY)
 		if (prevY < this.scrollY) {
 			menu.classList.add('menuScroll')
 
