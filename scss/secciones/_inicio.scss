@@ -7,10 +7,10 @@
 
     .cont_izq {
         display: flex;
+        position: relative;
         flex-direction: column;
         margin-top: 10vw; // 100px
         gap: 3.65vw; // 70px
-
         .cont_text_inicio {
 
             h1,
@@ -29,42 +29,6 @@
                 max-width: 40.36vw; //775px
             }
         }
-
-        .cont_btn_inicio {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            position: relative;
-            max-width: 40.36vw; //775px
-            gap: 1.56vw; // 30px
-
-            span {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 1.35vw 0;
-                border-radius: $radio1-25px;
-                font-weight: 600;
-                font-size: $fontsize-p-btn-inicio;
-                color: $font-color1;
-
-                img {
-                    position: absolute;
-                    left: 1.35vw;
-                    width: 2.5vw;
-                }
-            }
-
-            .btn_chateanos {
-                background-color: $btn-chateanos-wp-color;
-                box-shadow: 0px 5px 10px 0px rgba(51, 204, 51, 0.25);
-            }
-
-            .btn_llamanos {
-                border:  0.15625vw solid #FFF; // 3px
-            }
-        }
-
         .cont_info_inicio {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;

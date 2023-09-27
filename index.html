@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+    <meta http-equiv="Permissions-Policy" content="attribution-reporting 'self'">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
@@ -31,6 +32,7 @@
         <!-- ------------------------------------------------------------INICIO--------------------------------------------------- -->
         <section class="inicio" id="inicio">
             <div class="cont_izq">
+
                 <div class="cont_text_inicio">
                     <h1>
                         Nuestro compromiso es con tu mascota
@@ -38,9 +40,12 @@
                     <p>En nuestra clínica veterinaria, ofrecemos una gama completa de servicios dedicados al cuidado y
                         bienestar de tus mascotas.</p>
                 </div>
-                <div class="cont_btn_inicio">
-                    <span class="btn_chateanos"><img src="img/inicio/wp.svg"> Chateanos</span>
-                    <span class="btn_llamanos"><img src="img/inicio/telefono.svg"> Llamanos</span>
+                <div class="cont_btn_main">
+                    <a href="https://wa.me/541133156226" target="_blank"><span class="btn_chateanos"><img src="img/inicio/wp.svg"> Chateanos</span></a>
+                    <div class="popup_num_inicio init" id="popup_inicio">
+                        <p>+54 11 4823 6420</p>
+                    </div>
+                    <span class="btn_llamanos" id="btn_llamanos_inicio"><img src="img/inicio/telefono.svg"> Llamanos</span>
                 </div>
                 <div class="cont_info_inicio">
                     <div class="info_inicio"><img src="img/inicio/lab_icon.svg"><span>Laboratorio <br> propio</span>
@@ -226,9 +231,12 @@
         <section class="contacto" id="contacto">
             <div class="cont_contacto">
                 <h1>Contactá <br> con nosotros</h1>
-                <div class="cont_btn_contacto">
-                    <span class="btn_chateanos"><img src="img/inicio/wp.svg"> Chateanos</span>
-                    <span class="btn_llamanos"><img src="img/inicio/telefono.svg"> Llamanos</span>
+                <div class="cont_btn_main btn_contactos">
+                    <a href="https://wa.me/541133156226" target="_blank"><span class="btn_chateanos"><img src="img/inicio/wp.svg"> Chateanos</span></a>
+                    <div class="popup_num_inicio init" id="popup_contacto">
+                        <p>+54 11 4823 6420</p>
+                    </div>
+                    <span class="btn_llamanos" id="btn_llamanos_contacto"><img src="img/inicio/telefono.svg"> Llamanos</span>
                 </div>
                 <div class="img_contacto">
                     <img src="img/contactos/img_contactos.webp">

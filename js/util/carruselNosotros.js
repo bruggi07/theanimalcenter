@@ -1,4 +1,4 @@
-import { cargarNosotrosCarrusel } from "../main.js";
+import { cargarNosotrosCarrusel, secciones } from "../main.js";
 import { contenedor, rootStyles, totalViews, getTransformValue, widthView } from "./dependencias.js";
 
 cargarNosotrosCarrusel();
@@ -45,7 +45,27 @@ function startInterval() {
 function stopInterval() {
     clearInterval(intervID);
 }
-startInterval();
+
+const observer = new IntersectionObserver((entradas) => {
+
+    entradas.forEach(entrada => {
+        const id = entrada.target.getAttribute('id');
+        const menuLink = document.querySelector(`nav a[href="#${id}"]`);
+
+
+        if (entrada.isIntersecting && entrada.target.className == 'nosotros') {
+            // console.log('set interval start')
+            stopInterval();
+            startInterval();
+        }
+
+    });
+}
+    , {
+        rootMargin: '-50% 0% -50% 0%'
+    });
+secciones.forEach(seccion => observer.observe(seccion))
+
 reordenSlider();
 contenedor.addEventListener('transitionend', reordenSlider);
 

@@ -7,7 +7,7 @@ let span = document.getElementById('ano_actual')
 span.innerHTML = ano;
 
 //observer
-let secciones = document.querySelectorAll('section');
+export let secciones = document.querySelectorAll('section');
 const observer = new IntersectionObserver((entradas) => {
 
   entradas.forEach(entrada => {
@@ -15,13 +15,17 @@ const observer = new IntersectionObserver((entradas) => {
     const menuLink = document.querySelector(`nav a[href="#${id}"]`);
 
 
-    if (entrada.isIntersecting && entrada.target.className != 'clientes') {
+    if (entrada.isIntersecting) {
 
-      let seleccionado = document.querySelector('nav a.seleccionado');
-      if (seleccionado != null) {
-        seleccionado.classList.remove('seleccionado');
-      }
+      try {
+        let seleccionado = document.querySelector('nav a.seleccionado');
+        if (seleccionado != null) {
+          seleccionado.classList.remove('seleccionado');
+        }
         menuLink.classList.add('seleccionado');
+      } catch (e) {
+        console.log('pasando por seccion clientes o otro error', e)
+      }
     }
 
   });
@@ -29,24 +33,55 @@ const observer = new IntersectionObserver((entradas) => {
   , {
     rootMargin: '-50% 0% -50% 0%'
   });
+
 secciones.forEach(seccion => observer.observe(seccion))
+
+
+//botones inicio
+let llamanos = document.querySelector('#btn_llamanos_inicio');
+
+llamanos.addEventListener('click', () => {
+  let popup = document.querySelector('#popup_inicio');
+  if (!popup.className.includes('bounceInUp')) {
+    popup.classList.remove('bounceOutDown')
+    popup.classList.remove('init')
+    popup.classList.add('bounceInUp')
+  } else if (popup.className.includes('bounceInUp')) {
+    popup.classList.remove('bounceInUp')
+    popup.classList.add('bounceOutDown')
+  }
+})
+// botones contactos
+let llamanos2 = document.querySelector('#btn_llamanos_contacto');
+
+llamanos2.addEventListener('click', () => {
+  let popup = document.querySelector('#popup_contacto');
+  if (!popup.className.includes('bounceInDown')) {
+    popup.classList.remove('bounceOutUp')
+    popup.classList.remove('init')
+    popup.classList.add('bounceInDown')
+  } else if (popup.className.includes('bounceInDown')) {
+    popup.classList.remove('bounceInDown')
+    popup.classList.add('bounceOutUp')
+  }
+})
 
 //Menu Scroll
 
 let prevY = window.scrollY;
 let menu = document.querySelector('.menu');
 
-	window.addEventListener('scroll', function () {
-		if (prevY < this.scrollY) {
-			menu.classList.add('menuScroll')
+window.addEventListener('scroll', function () {
+  if (prevY < this.scrollY) {
+    menu.classList.add('menuScroll')
 
-		} else if (prevY < 10) {
-      menu.classList.remove('menuScroll')
+  } else if (prevY < 10) {
+    menu.classList.remove('menuScroll')
 
-		};
+  };
 
-		prevY = window.scrollY
-	});
+  prevY = window.scrollY
+});
 
 
 //nosotros------
