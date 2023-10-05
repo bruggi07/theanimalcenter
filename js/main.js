@@ -36,33 +36,37 @@ const observer = new IntersectionObserver((entradas) => {
 
 secciones.forEach(seccion => observer.observe(seccion))
 
-
 //botones inicio
 let llamanos = document.querySelector('#btn_llamanos_inicio');
 let popup = document.querySelector('#popup_inicio');
+let timeoutID;
 function animaIN() {
-  popup.classList.remove('bounceOutDown')
-  popup.classList.remove('init')
-  popup.classList.add('bounceInUp')
+  popup.classList.remove('bounceOutDown');
+  popup.classList.remove('init');
+  popup.classList.add('bounceInUp');
 }
 function animaOut() {
-  popup.classList.remove('bounceInUp')
-  popup.classList.add('bounceOutDown')
+  popup.classList.remove('bounceInUp');
+  popup.classList.add('bounceOutDown');
 }
 llamanos.addEventListener('click', () => {
   if (!popup.className.includes('bounceInUpClick')) {
     popup.classList.add('bounceInUpClick')
   } else if (popup.className.includes('bounceInUpClick')) {
-    popup.classList.remove('bounceInUpClick')
+    popup.classList.remove('bounceInUpClick');
     animaOut();
   }
 })
 llamanos.addEventListener('mouseenter', () => {
+  clearTimeout(timeoutID);
   animaIN();
 })
 llamanos.addEventListener('mouseleave', () => {
-  animaOut();
+  timeoutID = setTimeout(() => {
+    animaOut();
+  }, 500);
 })
+
 
 // botones contactos
 let llamanos2 = document.querySelector('#btn_llamanos_contacto');
@@ -75,22 +79,25 @@ function animaInContacto() {
 function animaOutContacto() {
   popup2.classList.remove('bounceInDown')
   popup2.classList.add('bounceOutUp')
-  
+
 }
 llamanos2.addEventListener('click', () => {
-  
+
   if (!popup2.className.includes('bounceInDownClick')) {
-   popup2.classList.add('bounceInDownClick');
+    popup2.classList.add('bounceInDownClick');
   } else if (popup2.className.includes('bounceInDownClick')) {
-   popup2.classList.remove('bounceInDownClick');
-   animaOutContacto();
- }
+    popup2.classList.remove('bounceInDownClick');
+    animaOutContacto();
+  }
 })
-llamanos2.addEventListener('mouseenter',()=>{
+llamanos2.addEventListener('mouseenter', () => {
+  clearTimeout(timeoutID);
   animaInContacto();
 })
-llamanos2.addEventListener('mouseleave',()=>{
-  animaOutContacto();
+llamanos2.addEventListener('mouseleave', () => {
+ timeoutID = setTimeout(() => {
+    animaOutContacto();
+  }, 500);
 })
 
 //Menu Scroll
