@@ -56,7 +56,7 @@ const observer = new IntersectionObserver((entradas) => {
         if (entrada.isIntersecting && entrada.target.className == 'nosotros') {
             // console.log('set interval start')
             stopInterval();
-            startInterval();
+            setTimeout(startInterval(), 2000);
         }
 
     });

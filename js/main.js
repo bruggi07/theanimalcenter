@@ -39,31 +39,58 @@ secciones.forEach(seccion => observer.observe(seccion))
 
 //botones inicio
 let llamanos = document.querySelector('#btn_llamanos_inicio');
-
+let popup = document.querySelector('#popup_inicio');
+function animaIN() {
+  popup.classList.remove('bounceOutDown')
+  popup.classList.remove('init')
+  popup.classList.add('bounceInUp')
+}
+function animaOut() {
+  popup.classList.remove('bounceInUp')
+  popup.classList.add('bounceOutDown')
+}
 llamanos.addEventListener('click', () => {
-  let popup = document.querySelector('#popup_inicio');
-  if (!popup.className.includes('bounceInUp')) {
-    popup.classList.remove('bounceOutDown')
-    popup.classList.remove('init')
-    popup.classList.add('bounceInUp')
-  } else if (popup.className.includes('bounceInUp')) {
-    popup.classList.remove('bounceInUp')
-    popup.classList.add('bounceOutDown')
+  if (!popup.className.includes('bounceInUpClick')) {
+    popup.classList.add('bounceInUpClick')
+  } else if (popup.className.includes('bounceInUpClick')) {
+    popup.classList.remove('bounceInUpClick')
+    animaOut();
   }
 })
+llamanos.addEventListener('mouseenter', () => {
+  animaIN();
+})
+llamanos.addEventListener('mouseleave', () => {
+  animaOut();
+})
+
 // botones contactos
 let llamanos2 = document.querySelector('#btn_llamanos_contacto');
-
+let popup2 = document.querySelector('#popup_contacto');
+function animaInContacto() {
+  popup2.classList.remove('bounceOutUp')
+  popup2.classList.remove('init')
+  popup2.classList.add('bounceInDown')
+}
+function animaOutContacto() {
+  popup2.classList.remove('bounceInDown')
+  popup2.classList.add('bounceOutUp')
+  
+}
 llamanos2.addEventListener('click', () => {
-  let popup = document.querySelector('#popup_contacto');
-  if (!popup.className.includes('bounceInDown')) {
-    popup.classList.remove('bounceOutUp')
-    popup.classList.remove('init')
-    popup.classList.add('bounceInDown')
-  } else if (popup.className.includes('bounceInDown')) {
-    popup.classList.remove('bounceInDown')
-    popup.classList.add('bounceOutUp')
-  }
+  
+  if (!popup2.className.includes('bounceInDownClick')) {
+   popup2.classList.add('bounceInDownClick');
+  } else if (popup2.className.includes('bounceInDownClick')) {
+   popup2.classList.remove('bounceInDownClick');
+   animaOutContacto();
+ }
+})
+llamanos2.addEventListener('mouseenter',()=>{
+  animaInContacto();
+})
+llamanos2.addEventListener('mouseleave',()=>{
+  animaOutContacto();
 })
 
 //Menu Scroll
@@ -75,7 +102,7 @@ window.addEventListener('scroll', function () {
   if (prevY < this.scrollY) {
     menu.classList.add('menuScroll')
 
-  } else if (prevY < 10) {
+  } else if (prevY < 50) {
     menu.classList.remove('menuScroll')
 
   };
