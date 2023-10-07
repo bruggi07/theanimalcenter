@@ -10,7 +10,6 @@ let cargaDeProf = async () => {
 let publi = await cargaDeProf();
 const gruposDeProfesionales = publi.reduce((acumulador, current, index, array) => {
     const grupoActual = acumulador[acumulador.length - 1]; // Obtenemos el grupo actual
-
     if (grupoActual && grupoActual.length < 4) {
         // Si el grupo actual tiene menos de 4 elementos, agregamos el elemento actual
         grupoActual.push(current);
@@ -18,7 +17,6 @@ const gruposDeProfesionales = publi.reduce((acumulador, current, index, array) =
         // Si no, creamos un nuevo grupo y agregamos el elemento actual
         acumulador.push([current]);
     }
-
     // Verificamos si estamos en el último elemento del arreglo
     if (index === array.length - 1) {
         const ultimoGrupo = acumulador[acumulador.length - 1];
@@ -35,10 +33,10 @@ const gruposDeProfesionales = publi.reduce((acumulador, current, index, array) =
             acumulador.pop();
         }
     }
-
     return acumulador;
 }, []);
 let contenedor = document.querySelector('.cont_carrusel');
+let contenedorClientes = document.querySelector('.slider_clientes');
 let contenedorGrande = document.querySelector('.cont_wrapper_carrusel');
 let principalView = document.querySelectorAll('.cont_principalView');
 let totalViews = gruposDeProfesionales.length;
@@ -49,6 +47,11 @@ let widthView = function width() {
     var valorEnPX = (89.584 / 100) * anchoDelViewport; // 89.584 es el numero en vw del contenedor cont_principalView
     return valorEnPX;
 }
+// let widthView2 = function width2() {
+//     let anchoDelViewport = window.innerWidth;
+//     var valorEnPX = (24.73   / 100) * anchoDelViewport; // 23.3 es el numero en vw del contenedor TarClientes
+//     return valorEnPX;
+// }
 
 //Carrusel clientes
 let SliderCliente = document.querySelector('.slider_clientes');
@@ -61,13 +64,15 @@ let cargaDeCli = async () => {
     return publiCli;
 }
 let publiCli = await cargaDeCli();
-const grupoMensajes = publiCli.reduce((acc, curr, index, array) => {
-    if (index % 3 === 0) {
-        acc.push(array.slice(index, index + 3))
-    }
-    return acc
-}, []);
+var widthView2 = 100 / publiCli.length;
+// const grupoMensajes = publiCli.reduce((acc, curr, index, array) => {
+//     if (index % 3 === 0) {
+//         acc.push(array.slice(index, index + 3))
+//     }
+//     return acc
+// }, []);
 
 
 
-export { contenedor, contenedorGrande, totalViews, principalView, rootStyles, getTransformValue, SliderCliente, widthView, cargaDeProf, gruposDeProfesionales, grupoMensajes, link }
+
+export { contenedor, contenedorGrande, totalViews, principalView, rootStyles, getTransformValue, SliderCliente, widthView, cargaDeProf, gruposDeProfesionales, link,contenedorClientes,widthView2,publiCli }

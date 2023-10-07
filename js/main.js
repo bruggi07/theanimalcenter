@@ -1,5 +1,5 @@
 "use strict";
-import { SliderCliente, cargaDeProf, gruposDeProfesionales, grupoMensajes, link } from "./util/dependencias.js";
+import { SliderCliente, cargaDeProf, gruposDeProfesionales, publiCli, link } from "./util/dependencias.js";
 
 //año actual en footer
 let ano = new Date().getFullYear();
@@ -24,7 +24,7 @@ const observer = new IntersectionObserver((entradas) => {
         }
         menuLink.classList.add('seleccionado');
       } catch (e) {
-        console.log('pasando por seccion clientes o otro error', e)
+        console.log('pasando por seccion clientes o otro error')
       }
     }
 
@@ -188,11 +188,10 @@ function tarjetaCLiente(nombre, comentario) {
 
 //  cargando publicaciones desde json
 const cargarPublicaciones = () => {
-  grupoMensajes.forEach(mensajes => {
-    const cont_view_clientes = crearElemento('DIV', 'view_clientes');
-    mensajes.forEach(({ nombre, mensaje }) => {
-      cont_view_clientes.appendChild(tarjetaCLiente(nombre, mensaje))
-    });
+
+  const cont_view_clientes = crearElemento('DIV', 'view_clientes');
+  publiCli.forEach(tar => {
+      cont_view_clientes.appendChild(tarjetaCLiente(tar.nombre, tar.mensaje))
     SliderCliente.appendChild(cont_view_clientes);
   });
 };
