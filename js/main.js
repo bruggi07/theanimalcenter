@@ -103,19 +103,23 @@ llamanos2.addEventListener('mouseleave', () => {
 //Menu Scroll
 
 let prevY = window.scrollY;
+var ventana = screen.width;
+
 let menu = document.querySelector('.menu');
 
-window.addEventListener('scroll', function () {
-  if (prevY < this.scrollY) {
-    menu.classList.add('menuScroll')
-
-  } else if (prevY < 50) {
-    menu.classList.remove('menuScroll')
-
-  };
-
-  prevY = window.scrollY
-});
+if (ventana>600) {
+  window.addEventListener('scroll', function () {
+    if (prevY < this.scrollY) {
+      menu.classList.add('menuScroll')
+  
+    } else if (prevY < 50) {
+      menu.classList.remove('menuScroll')
+  
+    };
+  
+    prevY = window.scrollY
+  });
+}
 
 
 //nosotros------
@@ -197,6 +201,15 @@ const cargarPublicaciones = () => {
 };
 cargarPublicaciones();
 
+//menu celular cierra
+
+let menuBotones = document.querySelectorAll('.nav_menu_mobile');
+let input = document.querySelector('#menu')
+menuBotones.forEach(element => {
+  element.addEventListener('click',()=>{
+    input.checked = false
+  })
+});
 
 // fix scroll beheivor en todos los navegadores, con jquery-------->
 $(document).ready(function () {

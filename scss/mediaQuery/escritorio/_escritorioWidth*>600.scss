@@ -1,0 +1,21 @@
+@media screen and (min-width:600px) {
+    .menu {
+
+        .nav_menu_mobile,
+        #menu,
+        label {
+            display: none;
+        }
+    }
+
+    .inicio {
+        .cont_derech {
+
+            .cont_btn_main_mobile,
+            .cont_info_inicio_mobile,
+            p {
+                display: none !important;
+            }
+        }
+    }
+}

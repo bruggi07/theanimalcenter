@@ -10,3 +10,5 @@
 @import "secciones/clientes";
 @import "secciones/contacto";
 @import "secciones/footer";
+@import "mediaQuery/celular/celuWidth*<600";
+@import "mediaQuery/escritorio/escritorioWidth*>600";

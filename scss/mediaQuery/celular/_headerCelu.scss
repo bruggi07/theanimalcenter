@@ -1,0 +1,19 @@
+.menu{
+    position: absolute;
+    .img_logo{
+        width: 15vw;
+        top: 10vw;
+        left: 35%;
+        img{
+            width: 15vw;
+            height: 15vw;
+        }
+        span{
+            font-size: 3.5vw;
+        }
+    }
+    .nav_menu{
+        display: none;
+    }
+
+}
