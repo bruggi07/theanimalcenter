@@ -1,6 +1,7 @@
 "use strict";
 import { SliderCliente, cargaDeProf, gruposDeProfesionales, publiCli, link } from "./util/dependencias.js";
-
+function cargar (){document.querySelector('.cont_der_img').classList.add('fadeInRight')}
+window.onload = cargar();
 //año actual en footer
 let ano = new Date().getFullYear();
 let span = document.getElementById('ano_actual')
@@ -8,6 +9,7 @@ span.innerHTML = ano;
 
 //observer
 export let secciones = document.querySelectorAll('section');
+let tarjetas = document.querySelectorAll('.cont_tarjeta');
 const observer = new IntersectionObserver((entradas) => {
 
   entradas.forEach(entrada => {
@@ -16,7 +18,23 @@ const observer = new IntersectionObserver((entradas) => {
 
 
     if (entrada.isIntersecting) {
+      if (entrada.target.className === 'servicios') {
 
+        setTimeout(() => {
+          for (let i = 0; i < tarjetas.length; i++) {
+            const tar = tarjetas[i];
+            setTimeout(() => {
+              tar.classList.add('slideInLeft')
+            }, i * 50);
+
+          }
+        }, 500);
+      } else if (entrada.target.className === 'contacto'){
+        setTimeout(() => {
+          document.querySelector('.img_contacto').classList.add('slideInUp');
+        }, 500);
+      }
+      console.log(entrada.target.className)
       try {
         let seleccionado = document.querySelector('nav a.seleccionado');
         if (seleccionado != null) {
@@ -95,7 +113,7 @@ llamanos2.addEventListener('mouseenter', () => {
   animaInContacto();
 })
 llamanos2.addEventListener('mouseleave', () => {
- timeoutID = setTimeout(() => {
+  timeoutID = setTimeout(() => {
     animaOutContacto();
   }, 500);
 })
@@ -107,16 +125,16 @@ var ventana = screen.width;
 
 let menu = document.querySelector('.menu');
 
-if (ventana>600) {
+if (ventana > 600) {
   window.addEventListener('scroll', function () {
     if (prevY < this.scrollY) {
       menu.classList.add('menuScroll')
-  
+
     } else if (prevY < 50) {
       menu.classList.remove('menuScroll')
-  
+
     };
-  
+
     prevY = window.scrollY
   });
 }
@@ -195,7 +213,7 @@ const cargarPublicaciones = () => {
 
   const cont_view_clientes = crearElemento('DIV', 'view_clientes');
   publiCli.forEach(tar => {
-      cont_view_clientes.appendChild(tarjetaCLiente(tar.nombre, tar.mensaje))
+    cont_view_clientes.appendChild(tarjetaCLiente(tar.nombre, tar.mensaje))
     SliderCliente.appendChild(cont_view_clientes);
   });
 };
@@ -206,7 +224,7 @@ cargarPublicaciones();
 let menuBotones = document.querySelectorAll('.nav_menu_mobile');
 let input = document.querySelector('#menu')
 menuBotones.forEach(element => {
-  element.addEventListener('click',()=>{
+  element.addEventListener('click', () => {
     input.checked = false
   })
 });

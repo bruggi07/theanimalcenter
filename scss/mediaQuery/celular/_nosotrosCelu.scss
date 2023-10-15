@@ -1,0 +1,18 @@
+.nosotros{
+    .tittle_nosotros{
+        h1{
+            font-size: $fontsize-celu1;
+        }
+    }
+    .cont_text_nosotros{
+        grid-template-columns: 1fr;
+        gap:2vw;
+        p{
+            font-size: $fontsize-celu2;
+            margin: 0;
+        }
+        .text_izq_nosotros{
+            display: none;
+        }
+    }
+}
