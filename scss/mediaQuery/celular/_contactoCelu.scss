@@ -1,0 +1,29 @@
+.contacto{
+    .desk{
+        display: none;
+    }
+    .mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20vw 0;
+        height: 120vw;
+        h1{
+            font-size: $fontsize-celu1;
+            margin: 0;
+            margin-bottom: -15vw;
+        }
+        .img_contacto{
+            transform: none;
+            margin-top: 0;
+            img{
+                position: relative;
+                height: 52.8vw;
+                min-width: 45.6vw;
+                bottom: -18vw;
+            }
+        }
+
+    }
+}

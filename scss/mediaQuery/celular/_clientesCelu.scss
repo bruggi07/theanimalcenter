@@ -1,0 +1,88 @@
+.clientes {
+    .tittle_clientes {
+        h1 {
+            font-size: $fontsize-celu1;
+        }
+    }
+
+    .cont_clientes {
+        padding: 1vw 8vw;
+        .desk {
+            display: none;
+        }
+
+        .btn_izq,
+        .btn_derech {
+            background: $color-slider-bg;
+            border-radius: 50%;
+            height: 9vw;
+            width: 9vw;
+            top: 92%;
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 35%;
+                height: 55%;
+            }
+        }
+
+        .btn_derech {
+            right: 38%;
+            padding-left: 1vw;
+
+        }
+
+        .btn_izq {
+            left: 38%;
+            padding-right: 1vw;
+        }
+
+        .cont_slider {
+            .slider_clientes {
+                height: 50vw;
+
+                .view_clientes {
+                    align-items: center;
+
+                    .tar_clientes {
+                        width: 84vw;
+                        height: 40vw;
+                        padding: 3vw;
+                        border-radius: 3.85vw;
+                        h3,p {
+                            font-size: 3.59vw;
+                            margin: 0;
+                        }
+                        p{
+                            margin-top: 4vw;
+                        }
+
+                        .cont_cabecera_tar_clientes {
+                            grid-template-columns: 1fr 1fr 1fr;
+                            align-items: center;
+                            .estrellas_tar_clientes {
+                                grid-column: 2/3;
+                                margin-top: 0.8vw;
+                                margin-left: -2vw;
+
+                                img {
+                                    width: 15vw;
+                                }
+                            }
+                            .link_clientes {
+                                align-items: center;
+                                font-size: 2.5vw;
+                                grid-column: 3/4;
+                                grid-row: 1/2;
+                                width: 30vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

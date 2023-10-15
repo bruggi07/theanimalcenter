@@ -23,6 +23,9 @@
     }
     .cont_derech{
         justify-content: center;
+        .cont_der_img{
+            transform: none;
+        }
         .cont_btn_main_mobile{
             display: flex;
             flex-direction: column;

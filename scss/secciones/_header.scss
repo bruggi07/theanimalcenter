@@ -8,7 +8,7 @@ $height-scroll: 3.8vw;
     height: $height-scroll;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 200;
     transition: all .3s ease-out,background 0.3s ease-out;
 
     .nav_menu {

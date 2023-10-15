@@ -1,7 +1,7 @@
 "use strict";
 import { SliderCliente, cargaDeProf, gruposDeProfesionales, publiCli, link } from "./util/dependencias.js";
 function cargar (){document.querySelector('.cont_der_img').classList.add('fadeInRight')}
-window.onload = cargar();
+
 //año actual en footer
 let ano = new Date().getFullYear();
 let span = document.getElementById('ano_actual')
@@ -34,7 +34,6 @@ const observer = new IntersectionObserver((entradas) => {
           document.querySelector('.img_contacto').classList.add('slideInUp');
         }, 500);
       }
-      console.log(entrada.target.className)
       try {
         let seleccionado = document.querySelector('nav a.seleccionado');
         if (seleccionado != null) {
@@ -126,6 +125,7 @@ var ventana = screen.width;
 let menu = document.querySelector('.menu');
 
 if (ventana > 600) {
+  window.onload = cargar();
   window.addEventListener('scroll', function () {
     if (prevY < this.scrollY) {
       menu.classList.add('menuScroll')
@@ -223,6 +223,7 @@ cargarPublicaciones();
 
 let menuBotones = document.querySelectorAll('.nav_menu_mobile');
 let input = document.querySelector('#menu')
+document.querySelector('section').addEventListener('click', () => {input.checked = false})
 menuBotones.forEach(element => {
   element.addEventListener('click', () => {
     input.checked = false

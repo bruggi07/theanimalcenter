@@ -29,12 +29,11 @@
     .btn_chateanos {
         background-color: $btn-chateanos-wp-color;
         box-shadow: 0px 5px 10px 0px rgba(51, 204, 51, 0.25);
-        padding: 1.5vw 0; //correccion por el link a{}
 
         &:hover {
             cursor: pointer;
             scale: 1.05;
-        }
+     }
     }
 
     .btn_llamanos {
@@ -247,12 +246,11 @@
     .btn_chateanos {
         background-color: $btn-chateanos-wp-color;
         box-shadow: 0px 5px 10px 0px rgba(51, 204, 51, 0.25);
-        padding: 1.5vw 0; //correccion por el link a{}
 
         &:hover {
             cursor: pointer;
             scale: 1.05;
-        }
+     }
     }
 
     .btn_llamanos {
@@ -442,14 +440,13 @@
     width: 19.3vw; //775px
     justify-self: center;
 
-    //correccion por el link a{}
     .btn_chateanos {
         padding: 1.35vw 0;
     }
 
     .popup_num_inicio {
         clip-path: polygon(0 100%, 100% 100%, 100% 25%, 55% 25%, 50% 15%, 45% 25%, 0 25%);
-        top: 11vw;
+        top: 1vw;
 
         p {
             margin-top: 1.4vw;
@@ -599,5 +596,222 @@
         animation-duration: .5s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
+    }
+}
+.cont_btn_contacto_mobile {
+    display: flex;
+    flex-direction: column;
+    margin: 6vw auto;
+    width: 60vw;
+    gap: 3vw;
+    z-index: 1;
+    
+    span {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5vw 0;
+        border-radius: 5vw; 
+        font-weight: 600;
+        font-size: 6vw;
+        color: $font-color1;
+        transition: all .3s ease-out;
+
+        img {
+            position: absolute;
+            left: 4.5vw;
+            width: 7vw;
+        }
+    }
+
+    .btn_chateanos {
+        background-color: $btn-chateanos-wp-color;
+        box-shadow: 0px 5px 10px 0px rgba(51, 204, 51, 0.25);
+
+        &:hover {
+            cursor: pointer;
+            scale: 1.05;
+        }
+    }
+
+    .btn_llamanos {
+        border: 0.8vw solid #FFF;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+            scale: 1.05;
+        }
+    }
+
+    .init {
+        opacity: 0;
+    }
+
+    .popup_num_inicio {
+        display: flex;
+        position: absolute;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 57% 75%, 50% 95%, 43% 75%, 0% 75%);
+        background: #000;
+        width: 17vw;
+        height: 3.5vw;
+        top: -4vw;
+        right: 1.25vw;
+        justify-content: center;
+        user-select: text;
+
+        p {
+            font-size: $fontsize-popup-inicio;
+            color: $font-color1;
+            font-weight: 500;
+            margin-top: 0.35vw;
+        }
+    }
+
+    .bounceOutDown {
+        -webkit-animation-name: bounceOutDown;
+        animation-name: bounceOutDown;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+
+    }
+
+    @-webkit-keyframes bounceOutDown {
+        20% {
+            -webkit-transform: translate3d(0, 10px, 0);
+            transform: translate3d(0, 10px, 0);
+        }
+
+        40%,
+        45% {
+            opacity: 1;
+            -webkit-transform: translate3d(0, -20px, 0);
+            transform: translate3d(0, -20px, 0);
+        }
+
+        100% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 2vw, 0);
+            transform: translate3d(0, 2vw, 0);
+        }
+    }
+
+    @keyframes bounceOutDown {
+        20% {
+            -webkit-transform: translate3d(0, 10px, 0);
+            transform: translate3d(0, 10px, 0);
+        }
+
+        40%,
+        45% {
+            opacity: 1;
+            -webkit-transform: translate3d(0, -20px, 0);
+            transform: translate3d(0, -20px, 0);
+        }
+
+        100% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 2vw, 0);
+            transform: translate3d(0, 2vw, 0);
+        }
+    }
+
+    .bounceInUp {
+        -webkit-animation-name: bounceInUp;
+        animation-name: bounceInUp;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    .bounceInUpClick {
+        -webkit-animation-name: bounceInUp;
+        animation-name: bounceInUp;
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    @-webkit-keyframes bounceInUp {
+
+        0%,
+        60%,
+        75%,
+        90%,
+        100% {
+            -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 2.8vw, 0);
+            transform: translate3d(0, 2.8vw, 0);
+        }
+
+        60% {
+            opacity: 1;
+            -webkit-transform: translate3d(0, -20px, 0);
+            transform: translate3d(0, -20px, 0);
+        }
+
+        75% {
+            -webkit-transform: translate3d(0, 10px, 0);
+            transform: translate3d(0, 10px, 0);
+        }
+
+        90% {
+            -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+        }
+
+        100% {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes bounceInUp {
+
+        0%,
+        60%,
+        75%,
+        90%,
+        100% {
+            -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 2.8vw, 0);
+            transform: translate3d(0, 2.8vw, 0);
+        }
+
+        60% {
+            opacity: 1;
+            -webkit-transform: translate3d(0, -20px, 0);
+            transform: translate3d(0, -20px, 0);
+        }
+
+        75% {
+            -webkit-transform: translate3d(0, 10px, 0);
+            transform: translate3d(0, 10px, 0);
+        }
+
+        90% {
+            -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0);
+        }
+
+        100% {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
     }
 }

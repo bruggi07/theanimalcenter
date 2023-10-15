@@ -43,9 +43,9 @@ let botones = document.querySelectorAll('.cont_clientes span')
 let tarNum= publiCli.length;
 botones.forEach(tar => {
     tar.addEventListener('click', () => {
-        if (tar.classList.value == 'btn_derech' && (tarNum + ((algo/100)*tarNum)) > 3) {
+        if ((tar.classList.contains('btn_derech')  || tar.classList.contains('_der')) && (tarNum + ((algo/100)*tarNum)) > 3) {
             moverSliderDerechaC();
-        } else if (tar.classList.value == 'btn_izq' && algo < 0) {
+        } else if ((tar.classList.contains('btn_izq')  || tar.classList.contains('_izq')) && algo < 0) {
             moverSliderIzquierdaC();
         }
     })

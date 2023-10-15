@@ -15,4 +15,26 @@
             display: none;
         }
     }
+    .cont_wrapper_carrusel{
+        .cont_carrusel{
+            align-items: center;
+            .cont_principalView{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5vw;
+                .tar_carrusel{
+                    width: 47%;
+                    .img_carrusel{
+                        border: 2vw solid $color-base;
+                    }
+                    h3{
+                        font-size: 3.59vw;
+                    }
+                    p{
+                        font-size:2.56vw ;
+                    }
+                }
+            }
+        }
+    }
 }
