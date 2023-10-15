@@ -24,7 +24,7 @@ const observer = new IntersectionObserver((entradas) => {
           for (let i = 0; i < tarjetas.length; i++) {
             const tar = tarjetas[i];
             setTimeout(() => {
-              tar.classList.add('slideInLeft')
+              tar.classList.add('bounceIn')
             }, i * 50);
 
           }
