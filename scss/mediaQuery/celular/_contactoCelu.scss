@@ -26,4 +26,59 @@
         }
 
     }
+    .mobiledata{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .data_textos{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 5vw;
+            height: 100%;
+            row-gap: 0;
+            gap: 10vw;
+            align-items: baseline;
+            justify-content: space-between;
+            .data_contacto{
+                width: 100%;
+                h3{
+                    font-size: 3.6vw;
+                }
+                p{
+                    font-size: 3.07vw;
+                }
+                .cont_redes{
+                    gap: 2vw;
+                    a{
+                        width: 7.7vw;
+                        height: 7.7vw;
+                    }
+                }
+                .cont_telefono{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin: 0;
+                    width: 100%;
+                    span{
+                        display: flex;
+                        gap: 2vw;
+                    }
+                    img{
+                        width: 3.6vw;
+                    }
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    .map_google{
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+        width: 87.7vw;
+        height: 65vw;
+        border-radius: 2vw;
+
+    }
 }
